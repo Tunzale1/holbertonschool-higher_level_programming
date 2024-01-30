@@ -6,4 +6,4 @@ def uniq_add(my_list=[]):
         if i not in seen:
             total += int(i)
             seen.add(i)
-    return(total)
+    return (total)
