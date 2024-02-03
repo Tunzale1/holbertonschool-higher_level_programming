@@ -23,12 +23,13 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """private position atrb validation"""
-        self.__position = value
-        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(i, int) for i in value) or any(i < 0 for i in value):
+        if (
+                isinstance(value, tuple) and len(value) == 2
+                and all(isinstance(v, int) and v >= 0 for v in value)
+        ):
+            self.__position = value
+        else:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position[0] = value[0]
-        self.__position[1] = value[1]
 
     @size.setter
     def size(self, value):
@@ -44,11 +45,8 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for line in range(self.__position[1]):
-                print()
             for i in range(self.__size):
-                for space in range(self.__position[0]):
-                    print(" ", end="")
-                for j in range(self.__size):
-                    print('#', end="")
-                print()
+                if self.__position[1] > 0:
+                    print("#" * self.__size)
+                else:
+                    print(" " * self.__position[0] + "#" * self.__size)
