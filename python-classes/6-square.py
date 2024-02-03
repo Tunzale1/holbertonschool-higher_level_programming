@@ -25,7 +25,7 @@ class Square:
     def position(self, value):
         """private position atrb validation"""
         self.__position = value
-        if value[0] < 0 or value[1] < 0:
+        if value[0] < 0 or value[1] < 0 or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position[0] = value[0]
         self.__position[1] = value[1]
