@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''square'''
+'''saam eleykim'''
 
 
 class Square:
@@ -40,8 +40,14 @@ class Square:
 
     def my_print(self):
         """ prints in stdout the square with the character #"""
-        x, y = self.position
-        for i in range(self.size):
-            print(" " * x + "#" * self.size)
-        if self.size == 0:
+        if self.__size == 0:
             print()
+        else:
+            for line in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                for space in range(self.__position[0]):
+                    print(" ", end="")
+                for j in range(self.__size):
+                    print('#', end="")
+                print()
