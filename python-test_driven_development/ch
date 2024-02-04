@@ -1,0 +1,3 @@
+cmod 777 *.py
+clear
+pycodestyle *.py
