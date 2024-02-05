@@ -63,4 +63,4 @@ class Rectangle:
 
     def __del__(self):
         """Custom behavior when the rectangle is deleted"""
-        print("Bye... (3 dots)")
+        print("Bye rectangle...")
