@@ -55,11 +55,9 @@ class Rectangle:
             result = ""
             for _ in range(self.__height):
                 for _ in range(self.__width):
-                    result += Rectangle.print_symbol
+                    result += str(self.print_symbol)
                 result += "\n"
-            return result.rstrip()
-            symbols = [Rectangle.print_symbol] * self.__width
-            return "\n".join(symbols * self.__height)
+            return result[:-1]
 
     def __repr__(self):
         """Returns a string representation for recreation"""
