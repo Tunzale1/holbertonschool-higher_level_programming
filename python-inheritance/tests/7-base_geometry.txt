@@ -1,1 +1,111 @@
-bvcvbv
+``7-base_geometry.py``module
+===================
+
+using ``7-base_geometry``
+-------------------
+
+first, import function from module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test case 1:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", 89)
+	
+Test case 1.1:
+	>>> bg.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+
+Test case 2:
+	>>> bg.integer_validator("test", [1, 2])
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+Test case 3:
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test case 4:
+	>>> bg.integer_validator("impeach", 4.5)
+	Traceback (most recent call last):
+	...
+	TypeError: impeach must be an integer
+
+Test case 5:
+	>>> bg.integer_validator("impeach", 4.5)
+	Traceback (most recent call last):
+	...
+	TypeError: impeach must be an integer
+
+Test case 6:
+	>>> bg.integer_validator("test", "test2")
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+Test case 7:
+	>>> bg.integer_validator("null", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: null must be greater than 0
+
+Test case 8:
+	>>> bg.integer_validator("negative", -5)
+	Traceback (most recent call last):
+	...
+	ValueError: negative must be greater than 0
+
+Test case 9:
+	>>> bg.integer_validator("test", (2, 3, 5))
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+Test case 10:
+	>>> bg.integer_validator("teststring", {2, 3})
+	Traceback (most recent call last):
+	...
+	TypeError: teststring must be an integer
+
+Test case 11:
+	>>> bg.integer_validator("boolean", True)
+	Traceback (most recent call last):
+	...
+	TypeError: boolean must be an integer
+
+Test case 12:
+        >>> bg.integer_validator("boolean", False)
+        Traceback (most recent call last):
+        ...
+        TypeError: boolean must be an integer
+
+Test case 13:
+	>>> bg.integer_validator("none", None)
+	Traceback (most recent call last):
+	...
+	TypeError: none must be an integer
+
+Test case 14:
+        >>> bg.integer_validator("null", null)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'null' is not defined
+
+Test case 15:
+	>>> bg.integer_validator(1, 2, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Test case 16:
+	>>> type(bg) == BaseGeometry
+	True
+
+Test case 17:
+	>>> type(BaseGeometry.__dict__['integer_validator'])
+	<class 'function'>
