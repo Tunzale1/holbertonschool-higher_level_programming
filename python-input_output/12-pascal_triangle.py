@@ -3,6 +3,7 @@
 
 
 def pascal_triangle(n):
+    '''pascal'''
     my_list = []
     if n <= 0 or type(n) is not int:
         return ValueError("n must be a positive integer.")
