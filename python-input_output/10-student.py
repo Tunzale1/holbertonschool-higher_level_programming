@@ -10,11 +10,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        student_dict = {}
-        for attr in (attrs or dir(self)):
-            if not attr.startswith('_'):  # Exclude private attributes
-                value = getattr(self, attr)
-                if not callable(value):  # Exclude methods
-                    student_dict[attr] = value
-            return student_dict
+        if isinstance(attrs, list) and\
+                all(isinstance(it, str) for it in attrs):
+            new_dict = {}
+            for el in attrs:
+                if self.__dict__.get(el):
+                    new_dict[el] = self.__dict__[el]
+            return new_dict
         return self.__dict__
