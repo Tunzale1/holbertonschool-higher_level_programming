@@ -18,3 +18,4 @@ class Student:
                     student_dict[attr] = value
 
         return student_dict
+    return self.__dict__
