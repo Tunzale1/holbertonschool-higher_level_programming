@@ -16,6 +16,5 @@ class Student:
                 value = getattr(self, attr)
                 if not callable(value):  # Exclude methods
                     student_dict[attr] = value
-
-        return student_dict
-    return self.__dict__
+            return student_dict
+        return self.__dict__
