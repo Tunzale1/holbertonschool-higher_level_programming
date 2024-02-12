@@ -6,7 +6,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    '''document'''
+    """document"""
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -16,7 +16,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        '''get'''
+        """get"""
         return self.__width
 
     @width.setter
@@ -30,12 +30,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        '''get'''
+        """get"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        '''set'''
+        """set"""
         self.__height = value
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -44,12 +44,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        '''get'''
+        """get"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        '''set'''
+        """set"""
         self.__x = value
         if type(value) is not int:
             raise TypeError("x must be an integer")
@@ -58,12 +58,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        '''prototype'''
+        """prototype"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        '''setter'''
+        """setter"""
         self.__y = value
         if type(value) is not int:
             raise TypeError("y must be an integer")
@@ -71,5 +71,5 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
     def area(self):
-        '''area'''
+        """area"""
         return self.__width * self.__height
