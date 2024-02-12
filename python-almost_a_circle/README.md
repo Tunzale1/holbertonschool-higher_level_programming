@@ -1,6 +1,6 @@
-#Python - Almost a circle
-###Background Context
-####In this project, you will review everything about Python:
+# Python - Almost a circle
+### Background Context
+#### In this project, you will review everything about Python:
 - Import
 - Class
 - Exceptions
@@ -12,7 +12,7 @@
 - Unittest
 - Read/Write file
 
-####You will also learn about:
+#### You will also learn about:
 
 - args and kwargs
 - Serialization/Deserialization
