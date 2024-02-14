@@ -86,18 +86,20 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
-        '''Update the class Rectangle by adding the public method'''
-        if len(args) > 5:
-            raise ValueError("number of arguments can not be more than 5")
-        for i, arg in enumerate(args):
-            if i == 0:
-                self.id = arg
-            elif i == 1:
-                self.width = arg
-            elif i == 2:
-                self.height = arg
-            elif i == 3:
-                self.x = arg
-            elif i == 4:
-                self.y = arg
+    def update(self, *args, **kwargs):
+        """assigns a key/value argument to attributes"""
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
